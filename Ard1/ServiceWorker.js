@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Aurudu2026_1-0.1.0";
 const contentToCache = [
     "Build/Ard1.loader.js",
-    "Build/Ard1.framework.js.br",
-    "Build/Ard1.data.br",
-    "Build/Ard1.wasm.br",
+    "Build/Ard1.framework.js.unityweb",
+    "Build/Ard1.data.unityweb",
+    "Build/Ard1.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
