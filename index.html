@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mogo Game Test Hub</title>
+    <style>
+        /* CSS Variables based on the Logo Colors */
+        :root {
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --mogo-red: #be1e2d; /* Extracted from the logo's red flame */
+            --mogo-black: #231f20; /* Extracted from the logo's typography */
+            --text-light: #e0e0e0;
+            --accent-gradient: linear-gradient(135deg, #be1e2d, #7a121b);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            background: var(--mogo-black);
+            border-bottom: 3px solid var(--mogo-red);
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Grid Container */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            width: 90%;
+            padding: 50px 0;
+        }
+
+        /* Tiles/Cards */
+        .game-tile {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(190, 30, 45, 0.3);
+            border-color: var(--mogo-red);
+        }
+
+        .tile-banner {
+            height: 150px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tile-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tile-content h2 {
+            margin: 0 0 10px 0;
+            color: white;
+        }
+
+        .tile-content p {
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.4;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--mogo-red);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100063510515152" alt="Mogo Games Logo">
+        </div>
+        <h1>Mogo Game Test Hub</h1>
+    </header>
+
+    <main class="game-grid">
+        <a href="https://example.com/game1" class="game-tile">
+            <div class="tile-banner">ALPHA PROJECT</div>
+            <div class="tile-content">
+                <h2>Cyber Rush</h2>
+                <p>Test the latest physics engine updates in our high-speed racer.</p>
+                <div class="btn">Play Test</div>
+            </div>
+        </a>
+
+        <a href="https://example.com/game2" class="game-tile">
+            <div class="tile-banner">BETA TEST</div>
+            <div class="tile-content">
+                <h2>Shadow Realm</h2>
+                <p>MMORPG stress testing. Join the raid and report server lag.</p>
+                <div class="btn">Play Test</div>
+            </div>
+        </a>
+
+        <a href="https://example.com/game3" class="game-tile">
+            <div class="tile-banner">SANDBOX</div>
+            <div class="tile-content">
+                <h2>Voxel Builder</h2>
+                <p>Creative mode is now open for public asset testing.</p>
+                <div class="btn">Play Test</div>
+            </div>
+        </a>
+
+        <a href="https://example.com/game4" class="game-tile">
+            <div class="tile-banner">UPCOMING</div>
+            <div class="tile-content">
+                <h2>Proto-Strike</h2>
+                <p>Closed testing for our upcoming tactical shooter.</p>
+                <div class="btn">Request Access</div>
+            </div>
+        </a>
+    </main>
+
+    <footer>
+        &copy; 2026 Mogo Games. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
