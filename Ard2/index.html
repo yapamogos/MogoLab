@@ -103,9 +103,17 @@
 
 
       } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "540px";
-        canvas.style.height = "960px";
+        // Desktop style: Calculate dynamic size based on screen height
+        var targetHeight = window.innerHeight;
+        var targetWidth = targetHeight * (9 / 16);
+
+        // Apply the calculated dimensions
+        canvas.style.height = targetHeight + "px";
+        canvas.style.width = targetWidth + "px";
+        
+        // Optional: Center the canvas if the width is smaller than the screen width
+        canvas.style.display = "block";
+        canvas.style.margin = "0 auto";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
