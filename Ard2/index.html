@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=608 height=1080 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=540 height=960 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -52,12 +52,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Ard10.loader.js";
+      var loaderUrl = buildUrl + "/Ard11.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Ard10.data.unityweb",
-        frameworkUrl: buildUrl + "/Ard10.framework.js.unityweb",
-        codeUrl: buildUrl + "/Ard10.wasm.unityweb",
+        dataUrl: buildUrl + "/Ard11.data.unityweb",
+        frameworkUrl: buildUrl + "/Ard11.framework.js.unityweb",
+        codeUrl: buildUrl + "/Ard11.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Aurudu2026_1",
@@ -104,8 +104,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "608px";
-        canvas.style.height = "1080px";
+        canvas.style.width = "540px";
+        canvas.style.height = "960px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
