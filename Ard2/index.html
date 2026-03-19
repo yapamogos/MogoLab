@@ -18,13 +18,22 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
+        <!-- <div id="unity-logo-title-footer"></div>-->
+        <!-- <div id="unity-fullscreen-button"></div>-->
         <div id="unity-build-title">Aurudu2026_1</div>
       </div>
     </div>
     <script>
       var canvas = document.querySelector("#unity-canvas");
+
+      function resizeCanvas() {
+      if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var h = window.innerHeight;
+        var w = h * (9 / 16);
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+      }
+    }
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -88,25 +97,19 @@
       // expected to change.
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "540px";
-        canvas.style.height = "960px";
-      }
+      // ... (Keep your existing mobile code here) ...
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      document.querySelector("#unity-container").className = "unity-mobile";
+      canvas.className = "unity-mobile";
+    } else {
+      // Desktop style: call our new function
+      resizeCanvas();
+      // Add this listener so it stays 9:16 if the user moves their browser window
+      window.addEventListener('resize', resizeCanvas);
+    }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
 
@@ -117,9 +120,9 @@
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
+                //document.querySelector("#unity-fullscreen-button").onclick = () => {
+                  //unityInstance.SetFullscreen(1);
+               // };
 
               }).catch((message) => {
                 alert(message);
